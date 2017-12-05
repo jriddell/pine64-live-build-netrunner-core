@@ -12,11 +12,12 @@ set -x
 
 echo "I: create configuration"
 
-SNAP_URL='http://snapshot.debian.org/archive/debian/20170904/'
+#SNAP_URL='http://snapshot.debian.org/archive/debian/20170904/'
+SNAP_URL='http://ports.ubuntu.com/ubuntu-ports/'
 
 export LB_HDD_PARTITION_START="40960s"
 export LB_BOOTLOADERS="none"
-export LB_HDD_LABEL="PINEBOOK"
+export LB_HDD_LABEL="PINEBOOKneon"
 export LB_MKFS_OPTIONS="-O ^64bit,^metadata_csum,uninit_bg"
 
 # Set Version
@@ -28,10 +29,10 @@ echo "I: Format is $FMT"
 
 lb config \
  --architectures arm64 \
- --archive-areas 'main contrib non-free' \
- --distribution testing \
+ --archive-areas 'main universe' \
+ --distribution xenial \
  --binary-images hdd \
- --mode debian \
+ --mode ubuntu \
  --apt-source-archives false \
  --source false \
  --apt-options "--yes -o Debug::pkgProblemResolver=true -o Debug::pkgDepCache::AutoInstall=true -o Debug::pkgDepCache::Marker=true -o Acquire::Check-Valid-Until=false" \
@@ -54,9 +55,9 @@ lb config \
 echo "I: copy customization"
 test -d customization && cp -rf customization/* config/
 
-sed -i "s,@@PINE_FLAVOR_METAPACKAGE@@,netrunner-pinebook-packages,g" config/package-lists/netrunner.list.chroot
-echo "netrunner-settings-autostart-" >> config/package-lists/netrunner.list.chroot
+#sed -i "s,@@PINE_FLAVOR_METAPACKAGE@@,netrunner-pinebook-packages,g" config/package-lists/netrunner.list.chroot
+#echo "netrunner-settings-autostart-" >> config/package-lists/netrunner.list.chroot
 
-sed -i "s,@@_VER_@@,${VER},g" config/hooks/live/01-overwrite-release-files.hook.chroot
+#sed -i "s,@@_VER_@@,${VER},g" config/hooks/live/01-overwrite-release-files.hook.chroot
 
 echo "I: done"
