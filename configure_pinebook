@@ -23,9 +23,7 @@ export LB_MKFS_OPTIONS="-O ^64bit,^metadata_csum,uninit_bg"
 # Set Version
 VER=$(date +%Y%m%d.%H%M)
 # Set name for image file
-export LIVE_IMAGE_NAME="netrunner-core-pinebook-$VER"
-
-echo "I: Format is $FMT"
+export LIVE_IMAGE_NAME="neon-pinebook-$VER"
 
 lb config \
  --architectures arm64 \
@@ -57,6 +55,11 @@ test -d customization && cp -rf customization/* config/
 
 #sed -i "s,@@PINE_FLAVOR_METAPACKAGE@@,netrunner-pinebook-packages,g" config/package-lists/netrunner.list.chroot
 #echo "netrunner-settings-autostart-" >> config/package-lists/netrunner.list.chroot
+
+echo "ubuntu-minimal" >> config/package-lists/neon.list.chroot
+echo "ubuntu-standard" >> config/package-lists/neon.list.chroot
+echo "fvwm" >> config/package-lists/neon.list.chroot
+echo "sddm" >> config/package-lists/neon.list.chroot
 
 #sed -i "s,@@_VER_@@,${VER},g" config/hooks/live/01-overwrite-release-files.hook.chroot
 
