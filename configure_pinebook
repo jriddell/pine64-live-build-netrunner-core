@@ -62,6 +62,9 @@ echo "fvwm" >> config/package-lists/neon.list.chroot
 echo "sddm" >> config/package-lists/neon.list.chroot
 echo "u-boot-tools" >> config/package-lists/neon.list.chroot
 echo "pine64-linux-image" >> config/package-lists/neon.list.chroot
+echo "xorg" >> config/package-lists/neon.list.chroot
+echo "pine64-mali-x11" >> config/package-lists/neon.list.chroot
+echo "xserver-xorg-video-armsoc" >> config/package-lists/neon.list.chroot
 
 #sed -i "s,@@_VER_@@,${VER},g" config/hooks/live/01-overwrite-release-files.hook.chroot
 

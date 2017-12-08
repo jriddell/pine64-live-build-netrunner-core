@@ -1,0 +1,3 @@
+echo "I: installing armdoc .deb"
+wget http://embra.edinburghlinux.co.uk/~jr/tmp/xserver-xorg-video-armsoc_0.6.0+p20170904+git20171202.1033-0_arm64.deb
+dpkg --install xserver-xorg-video-armsoc_0.6.0+p20170904+git20171202.1033-1neon_arm64.deb
