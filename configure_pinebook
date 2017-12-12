@@ -70,6 +70,7 @@ echo "neon-settings" >> config/package-lists/neon.list.chroot
 echo "neon-desktop" >> config/package-lists/neon.list.chroot
 echo "neon-live" >> config/package-lists/neon.list.chroot
 echo "mesa-utils-extra" >> config/package-lists/neon.list.chroot
+echo "neon-settings-pinebook" >> config/package-lists/neon.list.chroot
 
 #sed -i "s,@@_VER_@@,${VER},g" config/hooks/live/01-overwrite-release-files.hook.chroot
 
