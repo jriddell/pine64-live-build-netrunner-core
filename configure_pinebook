@@ -58,7 +58,6 @@ test -d customization && cp -rf customization/* config/
 
 echo "ubuntu-minimal" >> config/package-lists/neon.list.chroot
 echo "ubuntu-standard" >> config/package-lists/neon.list.chroot
-echo "fvwm" >> config/package-lists/neon.list.chroot
 echo "sddm" >> config/package-lists/neon.list.chroot
 echo "u-boot-tools" >> config/package-lists/neon.list.chroot
 echo "pine64-linux-image" >> config/package-lists/neon.list.chroot
