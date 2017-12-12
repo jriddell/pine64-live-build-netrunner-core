@@ -1,2 +1,2 @@
 echo "I: adding user"
-useradd neon -p U6aMy0wojraho -u 1000 --groups adm,lp,sudo,audio,video,lpadmin,docker,sambashare,network,storage,libvirtd
+useradd neon -p U6aMy0wojraho -u 1000 --groups adm,lp,sudo,audio,video,lpadmin
